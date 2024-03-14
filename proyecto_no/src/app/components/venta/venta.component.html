@@ -1,0 +1,58 @@
+<br>
+<div style="text-align: center;">
+  <h3>Toma de Pedido</h3>
+</div>
+<br><br>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+  <!-- Columna para los productos -->
+  <div class="col-md-8">
+    <div class="row row-cols-3 g-4">
+      <div class="col" *ngFor="let producto of catalogoProductos.productos">
+        <div class="card">
+          <!-- Botón del producto -->
+          <button class="card btn btn-light" (click)="seleccionarProducto(producto)">
+            <div class="card-body">
+              <h5 class="card-title">{{ producto.nombre }}</h5>
+              <p class="card-text">Precio: ${{ producto.precio }}</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Columna para el ticket -->
+  <div class="col-md-4">
+    <!-- Contenido del ticket -->
+    <div class="card">
+      <div class="card-body">
+        <button type="button" class="btn btn-sm btn-outline-danger float-end" (click)="limpiarTicket()"
+          *ngIf="productosSeleccionados.length > 0" title="Eliminar todos los productos" >
+          <i class="bi bi-trash fs-5"></i> <!-- Ícono de bote de basura -->
+        </button>
+
+        <h5 class="card-title">Ticket</h5>
+        <p class="card-text">Contenido del ticket...</p>
+
+        <div *ngIf="productosSeleccionados.length > 0">
+          <p class="card-text" *ngFor="let producto of productosSeleccionados; let i = index">
+            {{ i + 1}}
+            Producto: {{ producto.nombre }} <br> Precio: ${{ producto.precio }}
+          </p>
+        </div>
+        <br>
+
+        <div class="float-end">
+          <p>Total de productos: {{totalesProductos}}</p>
+          <p>Total ${{totalPrecio}}</p>
+        </div>
+        <br>
+
+        <button type="button" class="btn btn-primary" *ngIf="productosSeleccionados.length > 0"
+          (click)="generarPedido()">
+          Generar pedido</button>
+      </div>
+    </div>
+  </div>
+</div>
