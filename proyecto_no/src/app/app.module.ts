@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { HeaderComponent } from './pages/shared/header/header.component';
 import { FooterComponent } from './pages/shared/footer/footer.component';
 import { VentaComponent } from './components/venta/venta.component';
+import { TicketsComponent } from './pages/tickets/tickets.component';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +20,13 @@ import { VentaComponent } from './components/venta/venta.component';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    VentaComponent
+    VentaComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

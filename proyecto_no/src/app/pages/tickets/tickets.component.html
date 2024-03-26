@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="container">
+  <div style="margin-top: 15px; margin-bottom: 20px; text-align: center;">
+    <h3>Lista de pedidos</h3>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4" *ngFor="let pedido of pedidos">
+      <div class="card mb-3">
+        <div class="card-body">
+          <button class="btn btn-danger btn-sm delete-button" (click)="eliminarPedido(pedido.numeroPedido)">Eliminar</button>
+          <h5 class="card-title">Pedido {{ pedido.numeroPedido }}</h5>
+          <p class="card-text">Fecha y hora: {{ pedido.fechaHora }}</p>
+          <p class="card-text">Cliente: {{ pedido.nombre }}</p>
+          <p class="card-text">Teléfono: {{ pedido.telefono }}</p>
+          <p class="card-text">Dirección: {{ pedido.direccion }}</p>
+          <p class="card-text">Observaciones: {{ pedido.observaciones }}</p>
+          <p class="card-text">Total de productos: {{ pedido.totalProductos }}</p>
+          <p class="card-text">Total: {{ pedido.totalPrecio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+<app-footer></app-footer>
