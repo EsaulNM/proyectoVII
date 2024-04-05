@@ -13,6 +13,36 @@
     top: 10px;
     right: 10px;
   }
+
+  .check-button {
+    position: absolute;
+    margin-left: 2;
+    top: 100px;
+    right: 10px;
+  }
+
+  .edit-button {
+    position: absolute;
+    margin-left: 2;
+    top: 55px;
+    right: 10px;
+  }
+
+  /* Archivo de estilos personalizado */
+  .swal2-confirm-custom-button {
+    background-color: #28a745 !important; /* Cambia el color de fondo del botón de confirmación */
+    color: #fff !important; /* Cambia el color del texto del botón de confirmación */
+    border-color: #28a745 !important; /* Cambia el color del borde del botón de confirmación */
+}
+
+/* Diseño del modal */
+.diseño-dialogo {
+  max-width: 90%; /* Opcional: Establece un máximo ancho para el modal */
+  max-height: 90%; /* Opcional: Establece un máximo largo para el modal */
+}
+
+
+
   
   app-footer {
     position: relative;

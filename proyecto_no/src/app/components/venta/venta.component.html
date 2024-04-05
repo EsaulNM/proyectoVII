@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>       
 
   <!-- Columna para el ticket -->
   <div class="col-md-4">
@@ -73,9 +73,15 @@
               <div class="card-body d-flex justify-content-between align-items-center">
                 <p class="card-text">
                   Producto: {{ producto.nombre }} <br />
+                  <ng-container *ngIf="producto.salsasSeleccionadas && producto.salsasSeleccionadas.length > 0">
+                    Tipo de salsa(s):
+                    <span *ngFor="let salsa of producto.salsasSeleccionadas; let last = last">
+                      {{ salsa.id }}{{ last ? '' : ', ' }}
+                    </span> <br>
+                  </ng-container>
                   Precio: ${{ producto.precio }}
                 </p>
-                <button class="btn btn-danger btn-sm" (click)="eliminarProducto(i)">
+                <button class="btn btn-danger btn-sm" (click)="eliminarProducto(i)" title="Eliminar producto del ticket">
                   <i class="fas fa-times"></i>
                 </button>
               </div>
