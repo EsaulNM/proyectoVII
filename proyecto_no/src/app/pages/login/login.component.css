@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 100vh; /* Opcional: establece la altura al 100% del viewport */
+  }
+  
